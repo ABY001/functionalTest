@@ -21,7 +21,7 @@ WebUI.click(findTestObject('Object Repository/OPERATIVE_ACCOUNT_OR/CURRENT ACCOU
 
 WebUI.click(findTestObject('Object Repository/OPERATIVE_ACCOUNT_OR/CASA_Maker_Checker/Page_icon-app/span_Operative Account'))
 
-WebUI.click(findTestObject('Object Repository/OPERATIVE_ACCOUNT_OR/CASA_Maker_Checker/Page_Operative Account  ICON APP/div_Pending Verification'))
+WebUI.click(findTestObject('OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/createCurrentAccount/Page_icon-app/span_Operative Account'))
 
 WebUI.click(findTestObject('Object Repository/OPERATIVE_ACCOUNT_OR/CASA_Maker_Checker/Page_Operative Account  ICON APP/button_No data_ant-btn ant-btn-primary'))
 

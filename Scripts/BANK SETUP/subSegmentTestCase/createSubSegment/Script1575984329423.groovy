@@ -15,6 +15,15 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import java.util.Random as Random
+
+int max = 9999
+
+int min = 101
+
+int num = max - min
+
+randomNum = (max + (new Random().nextInt() % num))
 
 WebUI.callTestCase(findTestCase('LOGIN'), [:], FailureHandling.STOP_ON_FAILURE)
 
@@ -26,11 +35,10 @@ WebUI.click(findTestObject('BANK_SETUP_OR/subSegmentOR/Page_icon-app/a_Sub-segme
 
 WebUI.click(findTestObject('BANK_SETUP_OR/subSegmentOR/Page_icon-app/button_Create Sub-Segment'))
 
-WebUI.setText(findTestObject('BANK_SETUP_OR/subSegmentOR/Page_icon-app/input_Code_ant-input'), CustomKeywords.'Keywords.randomData.TestDataGenerator.set_RandomNumber'(
-        4))
+WebUI.setText(findTestObject('BANK_SETUP_OR/subSegmentOR/Page_icon-app/input_Code_ant-input'), String.valueOf(randomNum))
 
 WebUI.setText(findTestObject('BANK_SETUP_OR/subSegmentOR/newSub/Page_icon-app/input_Description_ant-input'), 'DESCRIPTION FOR SUBSEGMENT' + 
-    CustomKeywords.'Keywords.randomData.TestDataGenerator.set_RandomNumber'(3))
+    String.valueOf(randomNum))
 
 WebUI.click(findTestObject('BANK_SETUP_OR/subSegmentOR/Page_icon-app/div_'))
 

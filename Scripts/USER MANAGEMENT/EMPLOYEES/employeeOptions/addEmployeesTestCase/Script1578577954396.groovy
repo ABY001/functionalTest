@@ -15,22 +15,25 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import java.util.Random as Random
 
-//import java.util.Random as Random
-//import com.kms.katalon.core.testobject.ConditionType as ConditionType
-//
-//int max = 9999
-//
-//int min = 101
-//
-//int num = max - min
-//
-//randomNum = (max + (new Random().nextInt() % num))
+int max = 9999
+
+int min = 101
+
+int num = max - min
+
+randomNum = (max + (new Random().nextInt() % num))
+
+randomNum1 = (max + (new Random().nextInt() % num))
+
+randomNum2 = (max + (new Random().nextInt() % num))
+
 WebUI.callTestCase(findTestCase('LOGIN'), [:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.click(findTestObject('BANK_SETUP_OR/countryOR/addAndDeleteCIty/Page_icon-app/a_Branch_aside__toggler'))
 
-WebUI.click(findTestObject('USER_MANAGEMENT_OR/businessGroupOR/newSpy/Page_icon-app/span_User Management'))
+WebUI.click(findTestObject('USER_MANAGEMENT_OR/employeesOR/spy/Page_icon-app/span_User Management'))
 
 WebUI.click(findTestObject('USER_MANAGEMENT_OR/employeesOR/Page_icon-app/a_Employees'))
 
@@ -38,26 +41,30 @@ WebUI.click(findTestObject('USER_MANAGEMENT_OR/employeesOR/Page_icon-app/button_
 
 WebUI.click(findTestObject('USER_MANAGEMENT_OR/employeesOR/Page_icon-app/li_Add Employee'))
 
-WebUI.setText(findTestObject('USER_MANAGEMENT_OR/employeesOR/Page_icon-app/input_Employee ID_ant-input'), 
-    'LBT' + CustomKeywords.'Keywords.randomData.TestDataGenerator.set_RandomNumber'(3))
+WebUI.setText(findTestObject('USER_MANAGEMENT_OR/employeesOR/Page_icon-app/input_Employee ID_ant-input'), String.valueOf(
+        randomNum))
 
 //GlobalVariable. newEmployee = 'LBT' + randomNum
 //WebUI.delay(4)
-WebUI.setText(findTestObject('USER_MANAGEMENT_OR/employeesOR/Page_icon-app/input_First Name_ant-input'), CustomKeywords.'Keywords.randomData.TestDataGenerator.getRandomFirstName'())
+WebUI.setText(findTestObject('USER_MANAGEMENT_OR/employeesOR/Page_icon-app/input_First Name_ant-input'), 'FADIPE' + String.valueOf(
+        randomNum))
 
 //WebUI.delay(5)
-WebUI.setText(findTestObject('USER_MANAGEMENT_OR/employeesOR/Page_icon-app/input_Middle Name_ant-input'), CustomKeywords.'Keywords.randomData.TestDataGenerator.getRandomFirstName'())
+WebUI.setText(findTestObject('USER_MANAGEMENT_OR/employeesOR/Page_icon-app/input_Middle Name_ant-input'), 'ABIOLA' + String.valueOf(
+        randomNum1))
 
-WebUI.setText(findTestObject('USER_MANAGEMENT_OR/employeesOR/Page_icon-app/input_Last Name_ant-input'), CustomKeywords.'Keywords.randomData.TestDataGenerator.getRandomLastName'())
+WebUI.setText(findTestObject('USER_MANAGEMENT_OR/employeesOR/Page_icon-app/input_Last Name_ant-input'), 'OLUWAFEMI' + String.valueOf(
+        randomNum2))
 
 WebUI.setText(findTestObject('USER_MANAGEMENT_OR/employeesOR/Page_icon-app/input_Initials_ant-input'), 'S.F.')
 
 WebUI.setText(findTestObject('USER_MANAGEMENT_OR/employeesOR/Page_icon-app/input_Short Name_ant-input'), 'ABBY')
 
-WebUI.setText(findTestObject('USER_MANAGEMENT_OR/employeesOR/Page_icon-app/input_Email Address_ant-input'), CustomKeywords.'Keywords.randomData.TestDataGenerator.getRandomEmail'())
+WebUI.setText(findTestObject('USER_MANAGEMENT_OR/employeesOR/Page_icon-app/input_Email Address_ant-input'), ('ABIOLA' + 
+    String.valueOf(randomNum1)) + '@EXAMPLE.COM')
 
-WebUI.setText(findTestObject('USER_MANAGEMENT_OR/employeesOR/Page_icon-app/input_Phone Number_ant-input'), '081' + CustomKeywords.'Keywords.randomData.TestDataGenerator.set_RandomNumber'(
-        8))
+WebUI.setText(findTestObject('USER_MANAGEMENT_OR/employeesOR/Page_icon-app/input_Phone Number_ant-input'), (('081' + String.valueOf(
+        randomNum1)) + String.valueOf(randomNum)))
 
 WebUI.click(findTestObject('USER_MANAGEMENT_OR/employeesOR/Page_icon-app/div_1'))
 

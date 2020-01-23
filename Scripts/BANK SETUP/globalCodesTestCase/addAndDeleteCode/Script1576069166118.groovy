@@ -15,6 +15,15 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import java.util.Random as Random
+
+int max = 9999
+
+int min = 101
+
+int num = max - min
+
+randomNum = (max + (new Random().nextInt() % num))
 
 WebUI.callTestCase(findTestCase('LOGIN'), [:], FailureHandling.STOP_ON_FAILURE)
 
@@ -32,14 +41,13 @@ WebUI.click(findTestObject('BANK_SETUP_OR/globalCodesOR/deleteCode/new/Page_icon
 
 WebUI.click(findTestObject('BANK_SETUP_OR/globalCodesOR/addCode/addCodeNew/Page_icon-app/button_Add Code'))
 
-WebUI.setText(findTestObject('BANK_SETUP_OR/globalCodesOR/addCode/addCodeNew/Page_icon-app/input_Code_ant-input'), CustomKeywords.'Keywords.randomData.TestDataGenerator.set_RandomNumber'(
-        4))
+WebUI.setText(findTestObject('BANK_SETUP_OR/globalCodesOR/addCode/addCodeNew/Page_icon-app/input_Code_ant-input'), String.valueOf(randomNum))
 
 WebUI.setText(findTestObject('BANK_SETUP_OR/globalCodesOR/addCode/addCodeNew/Page_icon-app/input_Description_ant-input'), 
-    CustomKeywords.'Keywords.randomData.TestDataGenerator.getRandomHeading'(3))
+  'DESCRIPTION FOR GLOBALCODE' + String.valueOf(randomNum))
 
 WebUI.setText(findTestObject('BANK_SETUP_OR/globalCodesOR/addCode/addCodeNew/Page_icon-app/input_Extra Information_ant-input'), 
-    CustomKeywords.'Keywords.randomData.TestDataGenerator.getRandomHeading'(8))
+    'MORE DESCRIPTION FOR GLOBALCODE')
 
 WebUI.click(findTestObject('BANK_SETUP_OR/globalCodesOR/addCode/addCodeNew/Page_icon-app/button_Submit'))
 

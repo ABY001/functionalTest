@@ -19,7 +19,7 @@ WebUI.callTestCase(findTestCase('LOGIN'), [:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.click(findTestObject('Object Repository/OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/viewCurrentAccount/Page_icon-app/a_Build No_aside__toggler'))
 
-WebUI.click(findTestObject('Object Repository/OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/viewCurrentAccount/Page_icon-app/span_Operative Account'))
+WebUI.click(findTestObject('OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/createCurrentAccount/Page_icon-app/span_Operative Account'))
 
 WebUI.click(findTestObject('Object Repository/OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/viewCurrentAccount/Page_Operative Account  ICON APP/button_Closed Accounts_ant-btn ant-btn-primary'))
 
@@ -42,9 +42,6 @@ WebUI.click(findTestObject('OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/spy/Page_Operat
 WebUI.click(findTestObject('OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/spy/Page_Operative Account  ICON APP/div_2'))
 
 WebUI.click(findTestObject('OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/spy/Page_Operative Account  ICON APP/li_ACCOUNT HOLDER DECEASED'))
-
-not_run: WebUI.setText(findTestObject('OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/Page_Operative Account  ICON APP/input_Lien Amount_ant-input ant-input'), 
-    CustomKeywords.'Keywords.randomData.TestDataGenerator.set_RandomNumber'(1) + '0000')
 
 WebUI.click(findTestObject('OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/spy/Page_Operative Account  ICON APP/input_End Date_ant-calendar-picker-input ant-input'), 
     FailureHandling.STOP_ON_FAILURE)

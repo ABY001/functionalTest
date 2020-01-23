@@ -15,6 +15,27 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import java.util.Random as Random
+
+int max = 9
+
+int min = 1
+
+int max2 = 99
+
+int min2 = 10
+
+int num = max - min
+
+int num2 = max2 - min2
+
+randomNum = (max + (new Random().nextInt() % num))
+
+randomNum1 = (max + (new Random().nextInt() % num))
+
+randomNum2 = (max2 + (new Random().nextInt() % num2))
+
+randomNum3 = (max2 + (new Random().nextInt() % num2))
 
 WebUI.callTestCase(findTestCase('LOGIN'), [:], FailureHandling.STOP_ON_FAILURE)
 
@@ -49,10 +70,10 @@ WebUI.click(findTestObject('BANK_SETUP_OR/swiftMessageOR/addSwiftMessage/div5/Pa
 WebUI.click(findTestObject('BANK_SETUP_OR/swiftMessageOR/addSwiftMessage/spy/Page_icon-app/li_NGN'))
 
 WebUI.setText(findTestObject('BANK_SETUP_OR/swiftMessageOR/addSwiftMessage/Page_icon-app/input_Minimum Amount_ant-input ant-input'), 
-    CustomKeywords.'Keywords.randomData.TestDataGenerator.set_RandomNumber'(1) + '00')
+    String.valueOf(randomNum) + '00')
 
 WebUI.setText(findTestObject('BANK_SETUP_OR/swiftMessageOR/addSwiftMessage/Page_icon-app/input_Maximum amount_ant-input ant-input_1'), 
-    CustomKeywords.'Keywords.randomData.TestDataGenerator.set_RandomNumber'(1) + '0,000')
+    String.valueOf(randomNum1) + '0,000')
 
 WebUI.click(findTestObject('BANK_SETUP_OR/swiftMessageOR/addSwiftMessage/Page_icon-app/button_Add Swift Tag'))
 
@@ -60,17 +81,16 @@ WebUI.click(findTestObject('BANK_SETUP_OR/swiftMessageOR/addSwiftMessage/spy/Pag
 
 WebUI.click(findTestObject('BANK_SETUP_OR/swiftMessageOR/addSwiftMessage/spy/Page_icon-app/button_Add Swift Tag'))
 
-WebUI.setText(findTestObject('BANK_SETUP_OR/swiftMessageOR/addSwiftMessage/spy/Page_icon-app/input_Tag_ant-input'), CustomKeywords.'Keywords.randomData.TestDataGenerator.set_RandomNumber'(
-        2))
+WebUI.setText(findTestObject('BANK_SETUP_OR/swiftMessageOR/addSwiftMessage/spy/Page_icon-app/input_Tag_ant-input'), String.valueOf(randomNum2))
 
 WebUI.setText(findTestObject('BANK_SETUP_OR/swiftMessageOR/addSwiftMessage/spy/Page_icon-app/input_Description_ant-input'), 
     'A TAG DESCRIPTION')
 
 WebUI.setText(findTestObject('BANK_SETUP_OR/swiftMessageOR/addSwiftMessage/Page_icon-app/input_Max No of Lines_ant-input ant-input_1_2'), 
-    CustomKeywords.'Keywords.randomData.TestDataGenerator.set_RandomNumber'(2))
+    String.valueOf(randomNum2))
 
 WebUI.setText(findTestObject('BANK_SETUP_OR/swiftMessageOR/addSwiftMessage/Page_icon-app/input_Max number of characters per line_ant_ee7646_1_2'), 
-    CustomKeywords.'Keywords.randomData.TestDataGenerator.set_RandomNumber'(2))
+    String.valueOf(randomNum3) + '0')
 
 WebUI.click(findTestObject('BANK_SETUP_OR/swiftMessageOR/addSwiftMessage/Page_icon-app/Page_icon-app/button_Add Swift Tag'))
 

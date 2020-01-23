@@ -15,10 +15,19 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import java.util.Random as Random
+
+int max = 9999
+
+int min = 101
+
+int num = max - min
+
+randomNum = (max + (new Random().nextInt() % num))
 
 WebUI.callTestCase(findTestCase('LOGIN'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('BANK_SETUP_OR/countryOR/addAndDeleteCIty/Page_icon-app/a_Branch_aside__toggler'))
+WebUI.click(findTestObject('Object Repository/OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/viewCurrentAccount/Page_icon-app/a_Build No_aside__toggler'))
 
 WebUI.click(findTestObject('OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/createCurrentAccount/Page_icon-app/span_Operative Account'))
 
@@ -77,7 +86,7 @@ WebUI.click(findTestObject('OPERATIVE_ACCOUNT_OR/SAVINGS ACCOUNT/createSavingsAc
 WebUI.click(findTestObject('OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/createCurrentAccount/Page_Operative Account  ICON APP/div_Mandate'))
 
 WebUI.setText(findTestObject('OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/createCurrentAccount/spy/Page_Operative Account  ICON APP/input_Mandate Name_ant-input'), 
-    'CURRENT ' + CustomKeywords.'Keywords.randomData.TestDataGenerator.getRandomName'(1, 3))
+    ('CURRENT ' + 'FADIPE ABIOLA') + String.valueOf(randomNum))
 
 WebUI.click(findTestObject('OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/createCurrentAccount/spy/Page_Operative Account  ICON APP/div_rel'))
 
