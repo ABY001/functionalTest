@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>create, edit, manage and delete country</description>
-   <name>addAndDeleteCountry</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>8754cf67-303c-4100-84c7-1185c821b086</testCaseGuid>
-</TestCaseEntity>

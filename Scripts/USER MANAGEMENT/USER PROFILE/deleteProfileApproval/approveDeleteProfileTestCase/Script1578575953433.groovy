@@ -17,7 +17,7 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.callTestCase(findTestCase('LOGIN_APPROVE'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('BANK_SETUP_OR/countryOR/addAndDeleteCIty/Page_icon-app/a_Branch_aside__toggler'))
+WebUI.click(findTestObject('USER_MANAGEMENT_OR/userProfileOR/spy/Page_icon-app/a_Build No_aside__toggler'))
 
 WebUI.click(findTestObject('USER_MANAGEMENT_OR/businessGroupOR/newSpy/Page_icon-app/span_User Management'))
 

@@ -15,21 +15,9 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
+WebUI.callTestCase(findTestCase('LOGIN_APPROVE'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.navigateToUrl('http://192.168.5.46:9090/sso/sso/login/')
-
-WebUI.setText(findTestObject('USER_MANAGEMENT_OR/rolesOR/approveUpdateRolesOR/approveLog/Page_Icon Login/input_WELCOME BACK_username'), 
-    'superadmin1')
-
-WebUI.setEncryptedText(findTestObject('USER_MANAGEMENT_OR/rolesOR/approveUpdateRolesOR/approveLog/Page_Icon Login/input_WELCOME BACK_password'), 
-    '3iF79iufxPg=')
-
-WebUI.click(findTestObject('USER_MANAGEMENT_OR/rolesOR/approveUpdateRolesOR/Page_Icon Login/button_Login'))
-
-WebUI.click(findTestObject('USER_MANAGEMENT_OR/rolesOR/approveUpdateRolesOR/Page_icon-app/div_Applications_item__icon'))
-
-WebUI.click(findTestObject('USER_MANAGEMENT_OR/rolesOR/approveUpdateRolesOR/Page_icon-app/a_Build No_aside__toggler'))
+WebUI.click(findTestObject('USER_MANAGEMENT_OR/userProfileOR/spy/Page_icon-app/a_Build No_aside__toggler'))
 
 WebUI.click(findTestObject('USER_MANAGEMENT_OR/rolesOR/approveUpdateRolesOR/Page_icon-app/span_User Management'))
 

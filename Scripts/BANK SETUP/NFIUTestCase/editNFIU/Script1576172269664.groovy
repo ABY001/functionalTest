@@ -15,6 +15,15 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import java.util.Random as Random
+
+int max = 9
+
+int min = 1
+
+int num = max - min
+
+randomNum = (max + (new Random().nextInt() % num))
 
 WebUI.callTestCase(findTestCase('LOGIN'), [:], FailureHandling.STOP_ON_FAILURE)
 
@@ -42,13 +51,13 @@ WebUI.clearText(findTestObject('BANK_SETUP_OR/NFIUOR/editNFIU/Page_icon-app/inpu
     FailureHandling.CONTINUE_ON_FAILURE)
 
 WebUI.setText(findTestObject('BANK_SETUP_OR/NFIUOR/editNFIU/Page_icon-app/input_Max withdrawal Amount_ant-input ant-input_1'), 
-    CustomKeywords.'Keywords.randomData.TestDataGenerator.set_RandomNumber'(1) + '0000')
+    String.valueOf(randomNum) + '0000')
 
 WebUI.clearText(findTestObject('BANK_SETUP_OR/NFIUOR/editNFIU/Page_icon-app/input_Max Deposit Amount_ant-input ant-input_1'), 
     FailureHandling.CONTINUE_ON_FAILURE)
 
 WebUI.setText(findTestObject('BANK_SETUP_OR/NFIUOR/editNFIU/Page_icon-app/input_Max Deposit Amount_ant-input ant-input_1'), 
-    CustomKeywords.'Keywords.randomData.TestDataGenerator.set_RandomNumber'(1) + '000000')
+    String.valueOf(randomNum) + '000000')
 
 WebUI.click(findTestObject('BANK_SETUP_OR/NFIUOR/editNFIU/Page_icon-app/button_Edit'))
 

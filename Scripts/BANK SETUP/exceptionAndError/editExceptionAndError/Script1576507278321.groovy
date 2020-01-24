@@ -14,6 +14,15 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import java.util.Random as Random
+
+int max = 9999
+
+int min = 101
+
+int num = max - min
+
+randomNum = (max + (new Random().nextInt() % num))
 
 WebUI.callTestCase(findTestCase('LOGIN'), [:], FailureHandling.STOP_ON_FAILURE)
 
@@ -36,7 +45,7 @@ WebUI.click(findTestObject('BANK_SETUP_OR/exceptionAndErrorOR/editExecutionAndEr
 WebUI.clearText(findTestObject('BANK_SETUP_OR/exceptionAndErrorOR/editExecutionAndError/Page_icon-app/input_Message_ant-input'))
 
 WebUI.setText(findTestObject('BANK_SETUP_OR/exceptionAndErrorOR/editExecutionAndError/Page_icon-app/input_Message_ant-input'), 
-    CustomKeywords.'Keywords.randomData.TestDataGenerator.getRandomHeading'(5))
+    'EXCEPTION EDITTED' + String.valueOf(randomNum))
 
 WebUI.click(findTestObject('BANK_SETUP_OR/exceptionAndErrorOR/editExecutionAndError/Page_icon-app/div_'))
 

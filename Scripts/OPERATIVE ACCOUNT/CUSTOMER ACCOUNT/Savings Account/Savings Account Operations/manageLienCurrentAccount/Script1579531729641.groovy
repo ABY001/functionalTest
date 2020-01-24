@@ -14,6 +14,15 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import java.util.Random as Random
+
+int max = 99
+
+int min = 11
+
+int num = max - min
+
+randomNum = (max + (new Random().nextInt() % num))
 
 WebUI.callTestCase(findTestCase('LOGIN'), [:], FailureHandling.STOP_ON_FAILURE)
 
@@ -40,7 +49,7 @@ WebUI.click(findTestObject('OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/Page_Operative 
 WebUI.click(findTestObject('OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/Page_Operative Account  ICON APP/li_COLLATERAL TO ADVANCES'))
 
 WebUI.setText(findTestObject('OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/Page_Operative Account  ICON APP/input_Lien Amount_ant-input ant-input'), 
-    CustomKeywords.'Keywords.randomData.TestDataGenerator.set_RandomNumber'(1) + '0000')
+    String.valueOf(randomNum) + '0000')
 
 WebUI.click(findTestObject('OPERATIVE_ACCOUNT_OR/CURRENT ACCOUNT/Page_Operative Account  ICON APP/input_Lien Expiry Date_ant-calendar-picker-input ant-input'), 
     FailureHandling.STOP_ON_FAILURE)

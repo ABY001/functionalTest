@@ -14,6 +14,15 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import java.util.Random as Random
+
+int max = 9999
+
+int min = 101
+
+int num = max - min
+
+randomNum = (max + (new Random().nextInt() % num))
 
 WebUI.callTestCase(findTestCase('LOGIN'), [:], FailureHandling.STOP_ON_FAILURE)
 
@@ -32,17 +41,17 @@ WebUI.click(findTestObject('BANK_SETUP_OR/financialInstitutionOR/editFinancialIn
 WebUI.clearText(findTestObject('BANK_SETUP_OR/financialInstitutionOR/editFinancialInstitution/latestSpy/Page_icon-app/input_Bank Name_ant-input'))
 
 WebUI.setText(findTestObject('BANK_SETUP_OR/financialInstitutionOR/editFinancialInstitution/latestSpy/Page_icon-app/input_Bank Name_ant-input'), 
-    CustomKeywords.'Keywords.randomData.TestDataGenerator.getRandomName'(1, 3) + ' BANK')
+    'UNION BANK')
 
 WebUI.clearText(findTestObject('BANK_SETUP_OR/financialInstitutionOR/editFinancialInstitution/Page_icon-app/input_Branch Code_ant-input'))
 
 WebUI.setText(findTestObject('BANK_SETUP_OR/financialInstitutionOR/editFinancialInstitution/Page_icon-app/input_Branch Code_ant-input'), 
-    CustomKeywords.'Keywords.randomData.TestDataGenerator.set_RandomNumber'(5))
+    String.valueOf(randomNum))
 
 WebUI.clearText(findTestObject('BANK_SETUP_OR/financialInstitutionOR/editFinancialInstitution/Page_icon-app/input_Bank Address_ant-input'))
 
 WebUI.setText(findTestObject('BANK_SETUP_OR/financialInstitutionOR/editFinancialInstitution/Page_icon-app/input_Bank Address_ant-input'), 
-    CustomKeywords.'Keywords.randomData.TestDataGenerator.getRandomCity'())
+    'IJAPO')
 
 WebUI.click(findTestObject('BANK_SETUP_OR/financialInstitutionOR/editFinancialInstitution/Page_icon-app/div_'))
 
@@ -55,17 +64,17 @@ WebUI.click(findTestObject('BANK_SETUP_OR/financialInstitutionOR/editFinancialIn
 WebUI.clearText(findTestObject('BANK_SETUP_OR/financialInstitutionOR/editFinancialInstitution/Page_icon-app/input_Zip Code_ant-input'))
 
 WebUI.setText(findTestObject('BANK_SETUP_OR/financialInstitutionOR/editFinancialInstitution/Page_icon-app/input_Zip Code_ant-input'), 
-    CustomKeywords.'Keywords.randomData.TestDataGenerator.set_RandomNumber'(5))
+    String.valueOf(randomNum))
 
 WebUI.clearText(findTestObject('BANK_SETUP_OR/financialInstitutionOR/editFinancialInstitution/Page_icon-app/input_MICR Bank Code_ant-input'))
 
 WebUI.setText(findTestObject('BANK_SETUP_OR/financialInstitutionOR/editFinancialInstitution/Page_icon-app/input_MICR Bank Code_ant-input'), 
-    CustomKeywords.'Keywords.randomData.TestDataGenerator.set_RandomNumber'(3))
+    String.valueOf(randomNum))
 
 WebUI.clearText(findTestObject('BANK_SETUP_OR/financialInstitutionOR/editFinancialInstitution/latestSpy/Page_icon-app/input_Business Identifier Code (BIC)_ant-input'))
 
 WebUI.setText(findTestObject('BANK_SETUP_OR/financialInstitutionOR/editFinancialInstitution/latestSpy/Page_icon-app/input_Business Identifier Code (BIC)_ant-input'), 
-    CustomKeywords.'Keywords.randomData.TestDataGenerator.set_RandomNumber'(4))
+    String.valueOf(randomNum))
 
 WebUI.click(findTestObject('BANK_SETUP_OR/financialInstitutionOR/editFinancialInstitution/latestSpy/Page_icon-app/button_Add Payment System'))
 
